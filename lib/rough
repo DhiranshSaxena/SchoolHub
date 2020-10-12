@@ -1,0 +1,9 @@
+
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Dhiransh\.android\debug.keystore | C:\bin\openssl sha1 -binary | C:\bin\openssl base64
+
+
+
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Dhiransh\.android\debug.keystore" | "E:\Schaffen\Confidential\bin\openssl" sha1 -binary | "E:\Schaffen\Confidential\bin\openssl" base64
+
+keytool -genkey -v -keystore c:\Users\Dhiransh\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
