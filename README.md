@@ -1,4 +1,4 @@
-# lpchub
+# SchoolHub
 
 A new Flutter application.
 
