@@ -15,6 +15,9 @@ void main() async {
       MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'SchoolHub',
+        routes: {
+          '/wrapper': (_)=> Wrapper(),
+        },
         home: Scaffold(
           backgroundColor: Color(0xff104976),
           body: Wrapper()

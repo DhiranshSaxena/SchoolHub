@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'file:///E:/Schaffen/Projects/LPC/lpchub/lib/PreviousPapers/lpc.dart';
 import 'package:lpchub/PreviousPapers/cms.dart';
+
+import 'lpc.dart';
 
 class Schools extends StatelessWidget
 {
