@@ -1,6 +1,6 @@
 # SchoolHub
 
-A new Flutter application.
+An Android Application for Students by Students.
 
 ## Getting Started
 
