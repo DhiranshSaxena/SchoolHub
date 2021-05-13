@@ -7,3 +7,40 @@ keytool -exportcert -alias androiddebugkey -keystore C:\Users\Dhiransh\.android\
 keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Dhiransh\.android\debug.keystore" | "E:\Schaffen\Confidential\bin\openssl" sha1 -binary | "E:\Schaffen\Confidential\bin\openssl" base64
 
 keytool -genkey -v -keystore c:\Users\Dhiransh\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(
+            Icons.access_alarm
+        ),
+      ),
+
+      C:\Program Files\Android\Android Studio\jre\bin\java
+
+      keytool -genkey -v -keystore c:\Users\dhira\key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+
+//Gmail
+
+/*googleAuth.signIn().then((result) {
+                          result.authentication.then((googleKey) {
+                            FirebaseAuth.instance
+                                .signInWithCredential(
+                                    GoogleAuthProvider.credential(
+                                        idToken: googleKey.idToken,
+                                        accessToken: googleKey.accessToken))
+                                .then((signedInUser) {
+
+                              Navigator.of(context)
+                                  .pushReplacement(MaterialPageRoute(
+                                builder: (context) => Dashboard(),
+                              ));
+                            }).catchError((e) {
+                              print(e);
+                            });
+                          }).catchError((e) {
+                            print(e);
+                          });
+                        }).catchError((e) {
+                          print(e);
+                        });*/

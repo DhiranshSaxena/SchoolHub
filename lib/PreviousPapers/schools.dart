@@ -31,7 +31,7 @@ class Schools extends StatelessWidget
                 color: Color(0xff104976),
                 child: Container(
                   height: 200,
-                  width: 200,
+                  width: MediaQuery.of(context).size.width-40,
                   child: ListTile(
                     onTap: (){
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => LPC(),));
@@ -43,7 +43,7 @@ class Schools extends StatelessWidget
                           style: TextStyle(
                             fontFamily: 'MeriendaOne',
                             color: Color(0xffE69494),
-                            fontSize: 23
+                            fontSize: 28
                           ),
                         )),
                   ),
@@ -56,7 +56,7 @@ class Schools extends StatelessWidget
                 color: Color(0xff104976),
                 child: Container(
                   height: 200,
-                  width: 200,
+                  width: MediaQuery.of(context).size.width-40,
                   child: ListTile(
                     onTap: (){
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => CMS(),));
@@ -68,7 +68,7 @@ class Schools extends StatelessWidget
                           style: TextStyle(
                               fontFamily: 'MeriendaOne',
                               color: Color(0xffE69494),
-                              fontSize: 23
+                              fontSize: 28
                           ),
                         )),
                   ),

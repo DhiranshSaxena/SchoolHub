@@ -46,7 +46,7 @@ class _CMSState extends State<CMS>
                         },
                         title: Center(
                           child: Text(
-                            "Standaed 9th",
+                            "Standard 9th",
                             style: TextStyle(
                               color: Color(0xffE69494),
                               fontFamily: 'MeriendaOne',
@@ -68,7 +68,7 @@ class _CMSState extends State<CMS>
                         },
                         title: Center(
                           child: Text(
-                            "Standaed 10th",
+                            "Standard 10th",
                             style: TextStyle(
                               color: Color(0xffE69494),
                               fontFamily: 'MeriendaOne',
@@ -101,7 +101,7 @@ class _CMSState extends State<CMS>
                         },
                         title: Center(
                           child: Text(
-                            "Standaed 11th",
+                            "Standard 11th",
                             style: TextStyle(
                               color: Color(0xffE69494),
                               fontFamily: 'MeriendaOne',
@@ -123,7 +123,7 @@ class _CMSState extends State<CMS>
                         },
                         title: Center(
                           child: Text(
-                            "Standaed 12th",
+                            "Standard 12th",
                             style: TextStyle(
                               color: Color(0xffE69494),
                               fontFamily: 'MeriendaOne',

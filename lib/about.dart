@@ -20,6 +20,7 @@ class About extends StatelessWidget {
   String url =
       "https://www.privacypolicygenerator.info/live.php?token=iQwlfE67zc0HkMZQXa3fjwfTTFhu3XTL";
   String discordURL = "https://discord.gg/34TkJRN";
+  String appURL = "https://play.google.com/store/apps/details?id=com.schaffen.lpchub";
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,18 +40,23 @@ class About extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Container(
-                color: Color(0xffe6005c),
-                child: Center(
-                  child: Text(
-                    "Rate Our App",
-                    style: TextStyle(
-                        fontFamily: 'Sora',
-                        color: Colors.white,
-                        fontSize: 25.0),
+              child: InkWell(
+                onTap: (){
+                  _launchUrl(appURL);
+                },
+                child: Container(
+                  color: Color(0xffe6005c),
+                  child: Center(
+                    child: Text(
+                      "Rate Our App",
+                      style: TextStyle(
+                          fontFamily: 'Sora',
+                          color: Colors.white,
+                          fontSize: 25.0),
+                    ),
                   ),
+                  width: MediaQuery.of(context).size.width - 20,
                 ),
-                width: MediaQuery.of(context).size.width - 20,
               ),
             ),
             Expanded(

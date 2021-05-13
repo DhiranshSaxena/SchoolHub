@@ -10,12 +10,11 @@ class InterviewImage extends StatelessWidget{
   {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width-30,
-        height: 400,
+        height: 600,
         child: Center(
           child: Image(
-            width: 400,
-            height: 200,
+            width: 600,
+            height: 400,
             image: NetworkImage(imageLink),
             fit: BoxFit.fill,
           ),

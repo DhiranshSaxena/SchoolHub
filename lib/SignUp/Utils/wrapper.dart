@@ -6,6 +6,7 @@ import 'package:lpchub/DashBoard/dashboard.dart';
 
 import '../../DashBoard/dashboard.dart';
 import '../../landing.dart';
+import '../../landing.dart';
 
 class Wrapper extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class Wrapper extends StatefulWidget {
 }
 
 class _WrapperState extends State<Wrapper> {
-  bool isLogged;
+  bool isLogged = false;
 
   ready() async {
     await HelperFunc.getUserloggedIn().then((value) {

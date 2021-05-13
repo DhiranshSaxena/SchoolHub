@@ -5,13 +5,13 @@ import 'package:lpchub/Circulars/pdf_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 
-class Circulars extends StatefulWidget
+class CommonCirculars extends StatefulWidget
 {
   @override
-  _CircularsState createState() => _CircularsState();
+  _CommonCircularsState createState() => _CommonCircularsState();
 }
 
-class _CircularsState extends State<Circulars> {
+class _CommonCircularsState extends State<CommonCirculars> {
   int i = 0;
   PdfPages pdf;
 
@@ -19,20 +19,42 @@ class _CircularsState extends State<Circulars> {
   {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffcee0e2),
-        appBar: AppBar(
-          elevation: 15.0,
-          title: Text("Circulars", style: TextStyle(fontFamily: 'MeriendaOne',),),
-          backgroundColor: Color(0xff104976),
-        ),
+        backgroundColor: Color(0xffdae7e8),
+        // appBar: AppBar(
+        //   elevation: 15.0,
+        //   title: Text("Common Circulars", style: TextStyle(fontFamily: 'MeriendaOne',),),
+        //   backgroundColor: Color(0xff104976),
+        // ),
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
           child: Column(
                 children: [
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                      child: Text(
+                        "Common Circulars",
+                        style: TextStyle(
+                            fontFamily: 'MeriendaOne',
+                            color: Color(0xffff9999),
+                            fontSize: 30.0,
+                            shadows: [
+                              Shadow(
+                                  blurRadius: 3.0,
+                                  color: Colors.black,
+                                  offset: Offset(1.0,1.0)
+                              )
+                            ]
+                        ),
+                      )),
+                  SizedBox(
+                    height: 15.0,
+                  ),
                   Expanded(
                     child: StreamBuilder(
-                      stream: FirebaseFirestore.instance.collection('Circulars').snapshots(),
+                      stream: FirebaseFirestore.instance.collection('Circulars').orderBy('timeStamp').snapshots(),
                       builder: (context,snapshot){
                         if(!snapshot.hasData){
                           return Center(
@@ -101,57 +123,68 @@ class _CircularLinkState extends State<CircularLink> {
     return Container(
       child: Column(
         children: [
+          Card(
+            elevation: 10.0,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.0),
+                color: Colors.white
+              ),
+              width: MediaQuery.of(context).size.width - 20,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                      widget.school,
+                    style: TextStyle(
+                      color: Color(0xffff9999),
+                      fontSize: 20.0,
+                      fontFamily: 'MeriendaOne',
+                        shadows: [
+                          Shadow(
+                              blurRadius: 1.0,
+                              color: Colors.black,
+                              offset: Offset(0.5,0.5)
+                          )
+                        ]
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    widget.titleMessge,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xff4e5ed9),
+                      fontFamily: 'Roboto',
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Date Posted - " + widget.date,
+                    style: TextStyle(
+                      fontFamily: 'Sora',
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff6ede64),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  )
+                ],
+              ),
+            ),
+          ),
           SizedBox(
-            height: 20,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
-              color: Color(0xff104976)
-            ),
-            width: MediaQuery.of(context).size.width - 20,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                    widget.school,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontFamily: 'MeriendaOne'
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  widget.date,
-                  style: TextStyle(
-                    fontFamily: 'Sora',
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  widget.titleMessge,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Roboto',
-                    fontSize: 18.0,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                )
-              ],
-            ),
-          ),
+            height: 10,
+          )
         ],
       ),
       /*child: Padding(

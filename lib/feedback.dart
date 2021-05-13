@@ -68,7 +68,41 @@ Widget build(BuildContext context)
             onPressed: (){
               Map<String,dynamic> suggestions = {'Feedback': suggest};
               crudObj.addData(suggestions).then((result){
-                dailogTrigger(context);
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context){
+                      return AlertDialog(
+                        backgroundColor: Color(0xff104976),
+                        title: Text("Your Feedback has been Recorded!",
+                          style: TextStyle(
+                              fontFamily: 'Sora',
+                              fontSize: 18.0,
+                              color: Color(0xffe6005c)
+                          ),
+                        ),
+                        content: Text(
+                          "Thank You for this lovely Feedback, Our Support team will be looking into the matter and wil be contacting you soon.",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Robot',
+                              fontSize: 14),),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text(
+                              "Close",
+                              style: TextStyle(
+                                fontFamily: 'Sora',
+                              ),),
+                            textColor: Color(0xffcee0e2),
+                            color: Color(0xffe6005c),
+                            onPressed: (){
+                              Navigator.of(context).pop();
+                            },
+                          )
+                        ],
+                      );
+                    }
+                );
               }).catchError((e){
                 print(e);
               });

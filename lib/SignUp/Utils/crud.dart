@@ -26,4 +26,9 @@ class crudMethods{
     CollectionReference collectionReference = FirebaseFirestore.instance.collection('Feedbacks');
     collectionReference.add(feed);
   }
+
+  addDataConf(feed){
+    CollectionReference collectionReference = FirebaseFirestore.instance.collection('Confession');
+    collectionReference.add(feed);
+  }
 }

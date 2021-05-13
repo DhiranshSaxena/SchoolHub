@@ -16,7 +16,7 @@ class InterviewPage extends StatefulWidget{
 
 class _InterviewPageState extends State<InterviewPage>{
 
-  String name,status,description1,description2,description3,date,img_link;
+  String name,status,description1,description2,description3,date,img_link, secondImageLink;
   final String docName;
   _InterviewPageState(this.docName);
 
@@ -32,6 +32,7 @@ class _InterviewPageState extends State<InterviewPage>{
         details.description3=value.data()["Description3"];
         details.date=value.data()["Date"];
         details.imageLink=value.data()["img_link"];
+        details.secondImageLink=value.data()["SecondImageLink"];
       });
       print(details.imageLink);
     });
@@ -46,74 +47,172 @@ class _InterviewPageState extends State<InterviewPage>{
   Widget build(BuildContext context)
   {
      return Scaffold(
-       appBar: AppBar(
-         backgroundColor: Color(0xff104976),
-         title: Text(
-             docName,
-           style: TextStyle(
-             fontFamily: 'MeriendaOne',
-             fontSize: 20.0,
-           ),
-         ),
-       ),
        backgroundColor: Color(0xffcee0e2),
        body: SingleChildScrollView(
          child: Container(
-
-           width: MediaQuery.of(context).size.width,
-           height: MediaQuery.of(context).size.height,
-           child: SingleChildScrollView(
              child: Column(
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                children: [
                  SizedBox(
-                   height: 30,
+                   height: 20,
                  ),
                  Container(
-                   height: 200,
-                   width: MediaQuery.of(context).size.width-30,
-                   decoration: BoxDecoration(
-                     border: Border.all(
-                       color: Color(0xff104976),
-                       width: 3.0
-                     )
-                   ),
-                   child: InterviewImage(
-                     imageLink: details.imageLink,
-                   ),
-                 ),
+                     child: Text(
+                       docName,
+                       style: TextStyle(
+                           fontFamily: 'MeriendaOne',
+                           color: Color(0xffff9999),
+                           fontSize: 30.0,
+                           shadows: [
+                             Shadow(
+                                 blurRadius: 3.0,
+                                 color: Colors.black,
+                                 offset: Offset(1.0,1.0)
+                             )
+                           ]
+                       ),
+                     )),
+                 Container(
+                     child: Text(
+                       details.status,
+                       style: TextStyle(
+                           fontFamily: 'MeriendaOne',
+                           color: Color(0xffff9999),
+                           fontSize: 18.0,
+                           shadows: [
+                             Shadow(
+                                 blurRadius: 3.0,
+                                 color: Colors.black,
+                                 offset: Offset(1.0,1.0)
+                             )
+                           ]
+                       ),
+                     )),
                  SizedBox(
-                   height: 30.0,
+                   height: 20,
                  ),
-                 Container(
-                   height: 110,
-                   width: MediaQuery.of(context).size.width - 30,
-                   decoration: BoxDecoration(
-                       border: Border.all(
-                           color: Color(0xff104976),
-                           width: 3.0
-                       )
+                 SingleChildScrollView(
+                   child: Column(
+                     children: [
+                       Container(
+                         height: 200,
+                         decoration: BoxDecoration(
+                         ),
+                         child: InterviewImage(
+                           imageLink: details.imageLink,
+                         ),
+                       ),
+                       SizedBox(
+                         height: 30.0,
+                       ),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           SizedBox(
+                             width: 20,
+                           ),
+                           Container(
+                             width: 350,
+                               child: Text(
+                                 details.description1,
+                                 style: TextStyle(
+                                     fontFamily: 'MeriendaOne',
+                                     color: Color(0xffff9999),
+                                     fontSize: 14.0,
+                                     shadows: [
+                                       Shadow(
+                                           blurRadius: 1.0,
+                                           color: Colors.black,
+                                           offset: Offset(0.3,0.3)
+                                       )
+                                     ]
+                                 ),
+                               )),
+                           SizedBox(
+                             width: 20,
+                           ),
+                         ],
+                       ),
+                       SizedBox(
+                         height: 20.0,
+                       ),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           SizedBox(
+                             width: 20,
+                           ),
+                           Container(
+                               width: 350,
+                               child: Text(
+                                 details.description2,
+                                 style: TextStyle(
+                                     fontFamily: 'MeriendaOne',
+                                     color: Color(0xffff9999),
+                                     fontSize: 14.0,
+                                     shadows: [
+                                       Shadow(
+                                           blurRadius: 1.0,
+                                           color: Colors.black,
+                                           offset: Offset(0.3,0.3)
+                                       )
+                                     ]
+                                 ),
+                               )),
+                           SizedBox(
+                             width: 20,
+                           ),
+                         ],
+                       ),
+                       SizedBox(
+                         height: 20.0,
+                       ),
+                       Container(
+                         height: 200,
+                         decoration: BoxDecoration(
+                         ),
+                         child: InterviewImage(
+                           imageLink: details.secondImageLink,
+                         ),
+                       ),
+                       SizedBox( height: 20,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           SizedBox(
+                             width: 20,
+                           ),
+                           Container(
+                               width: 350,
+                               child: Text(
+                                 details.description3,
+                                 style: TextStyle(
+                                     fontFamily: 'MeriendaOne',
+                                     color: Color(0xffff9999),
+                                     fontSize: 14.0,
+                                     shadows: [
+                                       Shadow(
+                                           blurRadius: 1.0,
+                                           color: Colors.black,
+                                           offset: Offset(0.3,0.3)
+                                       )
+                                     ]
+                                 ),
+                               )),
+                           SizedBox(
+                             width: 20,
+                           ),
+                         ],
+                       ),
+                       SizedBox(
+                         height: 20.0,
+                       ),
+                     ],
                    ),
-                   child: NameAndJob(Status: details.status,Name: details.name,),
                  ),
-                 SizedBox(
-                   height: 30.0,
-                 ),
-                 Container(
-                     height: MediaQuery.of(context).size.height,
-                     width: MediaQuery.of(context).size.width - 30,
-                     decoration: BoxDecoration(
-                       border: Border.all(
-                         color: Color(0xff104976),
-                         width: 3.0,
-                       )
-                     ),
-                     child: InterDescription(description1: details.description1,description2: details.description2,description3: details.description3,),
-                   ),
-                 SizedBox( height: 20,)
                ],
              ),
            ),
-         ),
        ),
      );
   }

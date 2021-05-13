@@ -20,7 +20,7 @@ class Memes extends StatelessWidget
             children: [
               Expanded(
                 child: StreamBuilder(
-                  stream: FirebaseFirestore.instance.collection('Memes').snapshots(),
+                  stream: FirebaseFirestore.instance.collection('Memes').orderBy('timeStamp').snapshots(),
                   builder: (context,snapshot){
                     if(!snapshot.hasData){
                       return Container(

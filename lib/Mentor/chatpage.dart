@@ -1,116 +1,147 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:lpchub/Mentor/constants.dart';
-import 'package:lpchub/Mentor/home.dart';
+//Coming Soon
 
-class ChatScreen extends StatefulWidget {
-  static String id = 'chat_screen';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class ChatPage extends StatefulWidget {
+  final docs;
+
+  const ChatPage({Key key, this.docs}) : super(key: key);
+
   @override
-  _ChatScreenState createState() => _ChatScreenState();
+  _ChatPageState createState() => _ChatPageState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
-  final _auth = FirebaseAuth.instance;
-  final _firestore = FirebaseFirestore.instance;
-  String msg;
-  User loggedInUser;
-  final messageTextController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+class _ChatPageState extends State<ChatPage> {
+  String groupChatId;
+  String userID;
 
+  TextEditingController textEditingController = TextEditingController();
+
+  ScrollController scrollController = ScrollController();
   @override
   void initState() {
+    getGroupChatId();
     super.initState();
-    getCurrentUser();
   }
 
-  void getCurrentUser() async {
-    try {
-      final user = await _auth.currentUser;
-      if (user != null) {
-        loggedInUser = user;
-      } else {
-        print('no user found');
-      }
-    } catch (e) {
-      print(e);
+  getGroupChatId() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+    userID = sharedPreferences.getString('id');
+
+    String anotherUserId = widget.docs['id'];
+
+    if (userID.compareTo(anotherUserId) > 0) {
+      groupChatId = '$userID - $anotherUserId';
+    } else {
+      groupChatId = '$anotherUserId - $userID';
     }
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff104976),
-        leading: null,
-        title: Text('DISCUSSION BOX', style: TextStyle(
-          fontFamily: 'MeriendaOne'
-        ),),
-
+        title: Text('Chat page!'),
       ),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            StreamBuilder<QuerySnapshot>(
-              stream: _firestore.collection('Messages').snapshots(),
-              builder: (context,snapshot){
-                if(!snapshot.hasData){
-                  return Center(
-                    child: CircularProgressIndicator(backgroundColor: kLightPrimaryColor,),
-                  );
-                }
-                final messages = snapshot.data.docs.reversed;
-                List<RMessageUI> messageWidgets = [];
-                for(var msg in messages){
-                  final messageText = msg.data()['text'];
-                  final messageSender = msg.data()['sender'];
-                  final currentUser = loggedInUser.email;
-                  final messageWidget = RMessageUI(text: messageText,sender: messageSender,isMe: currentUser == messageSender);
-                  messageWidgets.add(messageWidget);
-                }
-                return Expanded(
-                  child: ListView(
-                    children: messageWidgets,
-                    reverse: true,
-                  ),
-                );
-              },
-            ),
-            Row(
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance
+            .collection('Messages')
+            .doc(groupChatId)
+            .collection(groupChatId)
+            .orderBy('timestamp', descending: true)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData && snapshot.data != null) {
+            return Column(
               children: <Widget>[
-                SizedBox(width: 20,),
                 Expanded(
-                  child: Form(
-                    key: _formKey,
-                    child: TextFormField(
-                      controller: messageTextController,
-                      onChanged: (value) {
-                        msg = value;
-                      },
-                    ),
-                  ),
-                ),
-                FlatButton(
-                    onPressed: () {
-                      messageTextController.clear();
-                      _firestore.collection('Messages').add({
-                        'text': msg,
-                        'sender': loggedInUser.email
-                      });
-                    },
-                    child: Icon(
-                      Icons.send,
-                      color: Color(0xff104976),
-
+                    child: ListView.builder(
+                      controller: scrollController,
+                      itemBuilder: (listContext, index) =>
+                          buildItem(snapshot.data.documents[index]),
+                      itemCount: snapshot.data.documents.length,
+                      reverse: true,
                     )),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: TextField(
+                        controller: textEditingController,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.send),
+                      onPressed: () => sendMsg(),
+                    ),
+                  ],
+                ),
               ],
-            ),
-            SizedBox(
-              height: 20,
-            )
-          ],
-        ),
+            );
+          } else {
+            return Center(
+                child: SizedBox(
+                  height: 36,
+                  width: 36,
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                  ),
+                ));
+          }
+        },
+      ),
+    );
+  }
+
+  sendMsg() {
+    String msg = textEditingController.text.trim();
+
+    /// Upload images to firebase and returns a URL
+    if (msg.isNotEmpty) {
+      print('thisiscalled $msg');
+      var ref = FirebaseFirestore.instance
+          .collection('Messages')
+          .doc(groupChatId)
+          .collection(groupChatId)
+          .doc(DateTime.now().millisecondsSinceEpoch.toString());
+
+      FirebaseFirestore.instance.runTransaction((transaction) async {
+        await transaction.set(ref, {
+          "senderId": userID,
+          "anotherUserId": widget.docs['id'],
+          "timestamp": DateTime.now().millisecondsSinceEpoch.toString(),
+          'content': msg,
+          "type": 'text',
+        });
+      });
+
+      scrollController.animateTo(0.0,
+          duration: Duration(milliseconds: 100), curve: Curves.bounceInOut);
+    } else {
+      print('Please enter some text to send');
+    }
+  }
+
+  buildItem(doc) {
+    return Padding(
+      padding: EdgeInsets.only(
+          top: 8.0,
+          left: ((doc['senderId'] == userID) ? 64 : 0),
+          right: ((doc['senderId'] == userID) ? 0 : 64)),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+            color: ((doc['senderId'] == userID)
+                ? Colors.grey
+                : Colors.greenAccent),
+            borderRadius: BorderRadius.circular(8.0)),
+        child: (doc['tyoe'] == 'text')
+            ? Text('${doc['content']}')
+            : Image.network(doc['content']),
       ),
     );
   }

@@ -36,6 +36,7 @@ dependencies:
   share: ^0.6.5+2
   url_launcher: ^5.7.2
   provider: ^4.3.2+2
+  lottie: ^1.0.1
   flutter_spinkit:
 
 

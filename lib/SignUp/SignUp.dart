@@ -45,7 +45,7 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             children: [
               SizedBox(
-                height: 50,
+                height: 60,
               ),
               Container(
                 child: Center(
@@ -54,12 +54,12 @@ class _SignUpState extends State<SignUp> {
                     style: TextStyle(
                         color: Color(0xffE69494),
                         fontFamily: 'MeriendaOne',
-                        fontSize: 23),
+                        fontSize: 26),
                   ),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 80,
               ),
               Container(
                 width: 360,
@@ -76,7 +76,7 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Card(
                 elevation: 15.0,
@@ -160,8 +160,8 @@ class _SignUpState extends State<SignUp> {
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: true,
                             decoration: InputDecoration(
-                              labelText: 'CONFIRM YOUR PASSWORD',
-                              border: OutlineInputBorder(),
+                              labelText: 'Confirm Your Password',
+                              // border: OutlineInputBorder(),
                             ),
                           ),
                         ),
@@ -198,7 +198,7 @@ class _SignUpState extends State<SignUp> {
                 child: Text("CREATE ACCOUNT"),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Container(
                 child: InkWell(
@@ -212,7 +212,7 @@ class _SignUpState extends State<SignUp> {
                     style: TextStyle(
                         color: Color(0xffE69494),
                         fontFamily: 'Caveat',
-                        fontSize: 18),
+                        fontSize: 22),
                   ),
                 ),
               )

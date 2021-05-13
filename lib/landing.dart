@@ -35,43 +35,50 @@ class _LandingState extends State<Landing>
   Widget build(BuildContext context)
   {
     return Scaffold(
-      backgroundColor: Color(0xff104976),
+      backgroundColor: Color(0xfffef5f5),
       body: (pageInitialised)? Container(
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height:70,
+              height:100,
             ),
-            Center(
-              child: Container(
+              Container(
                 width: 300,
                 height: 250,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('asset/images/landing.jpg'),
+                        image: AssetImage('asset/images/landing.png'),
                         fit: BoxFit.fill
                     ),
-                    borderRadius: BorderRadius.circular(30.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: const Color(0xeb000000),
-                          blurRadius: 6
-                      )
-                    ]
+                    // borderRadius: BorderRadius.circular(30.0),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //       color: const Color(0xeb000000),
+                    //       blurRadius: 6
+                    //   )
+                    // ]
                 ),
               ),
-            ),
+
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             Center(
               child: Container(
                 child: Text(
                   "SCHOOLHUB",
                   style: TextStyle(
-                      fontFamily: 'MeriendaOne',
+                      fontFamily: 'Pacifico',
                       color: Color(0xffff9999),
-                      fontSize: 30.0
+                      fontSize: 30.0,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 5.0,
+                        color: Colors.black,
+                        offset: Offset(1.0,1.0)
+                      )
+                    ]
                   ),
                 ),
               ),
@@ -83,9 +90,16 @@ class _LandingState extends State<Landing>
               child: Text(
                 "An App For Students, By Students",
                 style: TextStyle(
-                    fontFamily: 'Caveat',
-                    fontSize: 23.0,
-                    color: Color(0xffff9999)
+                    fontFamily: 'MeriendaOne',
+                    fontSize: 20.0,
+                    color: Color(0xffff9999),
+                    shadows: [
+                      Shadow(
+                          blurRadius: 2.0,
+                          color: Colors.black,
+                          offset: Offset(0.2,0.2)
+                      )
+                    ]
                 ),
               ),
             ),
@@ -93,43 +107,50 @@ class _LandingState extends State<Landing>
               height: 40.0,
             ),
             Container(
-              width: 340,
+              width: 345,
               child: Text(
-                "School-Hub is an App made for Students of Class 9th to 12th.\n\nThe App contains all the necessary features that a student requires to score higher grade.",
+                "Get to know about all the Do\'s and Don\'ts during your school journey from your school toppers.",
                 style: TextStyle(
                     color: Color(0xffff9999),
                     fontSize: 20.0,
-                    fontFamily: 'Roboto'
+                    fontFamily: 'MeriendaOne',
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             SizedBox(
-              height: 50.0,
+              height: 30.0,
             ),
             RaisedButton(
                 child: Container(
-                  height: 40,
-                  width: 200,
+                  height: 110,
+                  width: 80,
                   child: Center(
                     child: Text(
-                      "GET STARTED",
+                      "START",
                       style: TextStyle(
                           fontSize: 20,
                           fontFamily: 'MeriendaOne',
-                          color: Color(0xff104976)
+                          color: Color(0xffff9999),
+                          shadows: [
+                            Shadow(
+                                blurRadius: 5.0,
+                                color: Colors.black,
+                                offset: Offset(0.5,0.5)
+                            )
+                          ]
                       ),
                     ),
                   ),
                 ),
                 onPressed: (){
-
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Input(),));
-
                 },
-                color: Color(0xff3d8ecd),
+                color: Color(0xfffef5f5),
                 elevation: 10.0,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
+                  side: BorderSide(color: Color(0xffff9999),width: 2.0),
+                    borderRadius: BorderRadius.circular(1000.0)
                 )
             )
           ],
@@ -139,7 +160,7 @@ class _LandingState extends State<Landing>
           height: 36,
           width: 36,
           child: CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+            valueColor: AlwaysStoppedAnimation<Color>(Color(0xffff9999)),
           ),
         ),
       ),
