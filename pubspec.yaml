@@ -31,7 +31,7 @@ dependencies:
   flutter_facebook_login: ^3.0.0
   http: ^0.12.2
   font_awesome_flutter: ^8.10.0
-  advance_pdf_viewer: ^1.2.0
+  advance_pdf_viewer: ^1.2.2
   google_fonts: ^1.1.0
   share: ^0.6.5+2
   url_launcher: ^5.7.2
@@ -65,6 +65,24 @@ flutter:
     - asset/images/landing.jpg
     - asset/images/img1.png
     - asset/images/img2.png
+    - asset/images/classroom.png
+    - asset/images/cms.png
+    - asset/images/info.png
+    - asset/images/info1.png
+    - asset/images/info2.png
+    - asset/images/info3.png
+    - asset/images/landing.png
+    - asset/images/lpc.png
+    - asset/bunkzone.json
+    - asset/chatting.json
+    - asset/check.json
+    - asset/dailynews.json
+    - asset/human.json
+    - asset/mentor.json
+    - asset/plane.json
+    - asset/resource.json
+    - asset/schoolhub.json
+    - asset/schoolhub1.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -13,7 +13,7 @@ floatingActionButton: FloatingActionButton(
         child: Icon(
             Icons.access_alarm
         ),
-      ),
+      ),google()  // Google's Maven repository
 
       C:\Program Files\Android\Android Studio\jre\bin\java
 
