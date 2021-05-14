@@ -13,6 +13,7 @@ import 'description.dart';
 class BunkZonePage extends StatefulWidget{
 
   final String docName;
+  
   BunkZonePage({Key key,this.docName}): super(key: key);
 
   @override
