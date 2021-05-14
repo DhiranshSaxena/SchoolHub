@@ -148,10 +148,8 @@ class _InterviewTitlePanelState extends State<InterviewTitlePanel> {
                     width: 40,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SizedBox(
-                        width: 20.0,
-                      ),
                       Container(
                             width: 228.6,
                             child: RichText(
@@ -192,8 +190,8 @@ class _InterviewTitlePanelState extends State<InterviewTitlePanel> {
                         height: 120,
                         child: Center(
                           child: Image(
-                            width: 120,
-                            height: 120,
+                            width: 100,
+                            height: 100,
                             image: NetworkImage(widget.FrontImageLink),
                             fit: BoxFit.fill,
                           ),

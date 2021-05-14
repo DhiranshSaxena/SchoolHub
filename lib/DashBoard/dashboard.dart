@@ -18,7 +18,7 @@ import 'package:lpchub/Mentor/home.dart';
 import 'package:lpchub/Notes/classSelect.dart';
 import 'package:lpchub/PreviousPapers/schools.dart';
 import 'package:lpchub/SignUp/UI/CurveDashboard.dart';
-import 'package:lpchub/SignUp/UI/bottomSheets.dart';
+import 'package:lpchub/UI/bottomSheets.dart';
 import 'package:lpchub/about.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lpchub/main.dart';

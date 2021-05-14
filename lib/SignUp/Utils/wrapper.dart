@@ -33,6 +33,7 @@ class _WrapperState extends State<Wrapper> {
 
   @override
   Widget build(BuildContext context) {
+    bool isLogged = false;
     return isLogged == null ? Loading() : isLogged ? Dashboard() : Landing();
   }
 }
