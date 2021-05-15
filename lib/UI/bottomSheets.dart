@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lpchub/UI/Profile.dart';
+import 'package:lpchub/UI/Subscription.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -46,6 +47,9 @@ class MyBottomSheet extends StatelessWidget{
                   ),
                 ),
                 ListTile(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Subscription()));
+                  },
                   title: Center(
                     child: Text(
                       "Your Subcription",

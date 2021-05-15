@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lottie/lottie.dart';
+import 'package:lpchub/landing.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -8,6 +11,16 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+
+  void completed(){
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Landing()));
+  }
+
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2), completed);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

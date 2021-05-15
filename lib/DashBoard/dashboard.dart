@@ -75,9 +75,9 @@ class _DashboardState extends State<Dashboard> {
                      child: Text(
                        "SCHOOLHUB",
                        style: TextStyle(
-                             fontFamily: 'Pacifico',
+                             fontFamily: 'MeriendaOne',
                              color: Color(0xffff9999),
-                             fontSize: 26.0,
+                             fontSize: 27.0,
                              shadows: [
                                Shadow(
                                    blurRadius: 5.0,

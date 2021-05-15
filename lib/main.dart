@@ -43,7 +43,7 @@ class _SplashState extends State<Splash>{
 
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), completed);
+    Timer(Duration(seconds: 2), completed);
   }
 
   Widget build(BuildContext context){
