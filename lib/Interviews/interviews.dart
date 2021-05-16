@@ -30,7 +30,7 @@ class _InterviewsState extends State<Interviews>
                   "School Stories",
                   style: TextStyle(
                       fontFamily: 'MeriendaOne',
-                      color: Color(0xffff9999),
+                      color: Color(0xff4e5ed9),
                       fontSize: 30.0,
                       shadows: [
                         Shadow(
@@ -158,14 +158,14 @@ class _InterviewTitlePanelState extends State<InterviewTitlePanel> {
                                     fontFamily: 'MeriendaOne'
                                 ),
                                 children: <TextSpan>[
-                                  new TextSpan(text: widget.Intro + "\n\n",  style: TextStyle(color: Color(0xffE69494), fontSize: 16, shadows: [
+                                  new TextSpan(text: widget.Intro + "\n\n",  style: TextStyle(color: Color(0xff4e5ed9), fontSize: 16, shadows: [
                                     Shadow(
                                         blurRadius: 0.5,
                                         color: Colors.black,
                                         offset: Offset(0.3,0.3)
                                     )
                                   ])),
-                                  new TextSpan(text: "Name - ", style: TextStyle(color: Color(0xff4e5ed9), fontWeight: FontWeight.bold,
+                                  new TextSpan(text: "Name - ", style: TextStyle(color: Color(0xffE69494), fontWeight: FontWeight.bold,
                                       shadows: [
                                         Shadow(
                                           blurRadius: 1.0,
@@ -174,7 +174,7 @@ class _InterviewTitlePanelState extends State<InterviewTitlePanel> {
                                     )
                                   ])),
                                   new TextSpan(text: widget.Name + "\n", style: TextStyle(color: Color(0xff5dc262))),
-                                  new TextSpan(text: "Date - ", style: TextStyle(color: Color(0xff4e5ed9), fontWeight: FontWeight.bold,shadows: [
+                                  new TextSpan(text: "Date - ", style: TextStyle(color: Color(0xffE69494), fontWeight: FontWeight.bold,shadows: [
                                     Shadow(
                                         blurRadius: 1.0,
                                         color: Colors.black,

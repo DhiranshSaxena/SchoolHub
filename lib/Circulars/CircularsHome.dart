@@ -23,7 +23,7 @@ class CircularsHome extends StatelessWidget{
                       "CICULARS AND NEWS",
                       style: TextStyle(
                           fontFamily: 'MeriendaOne',
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontSize: 27.0,
                           shadows: [
                             Shadow(
@@ -166,8 +166,8 @@ class CircularsHome extends StatelessWidget{
                 Container(
                   decoration: BoxDecoration(
                     gradient: new LinearGradient(colors: [
-                      Color(0xffE69494),
-                      Color(0xffE69494),
+                      Color(0xff4e5ed9),
+                      Color(0xff4e5ed9),
                     ],
                         begin: const FractionalOffset(0.0, 0.0),
                         end: const FractionalOffset(1.0, 1.0),
@@ -191,7 +191,7 @@ class CircularsHome extends StatelessWidget{
                 Container(
                   child: Text('SOON ON SCHOOLHUB',
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontSize: 16,
                         fontFamily: 'MeriendaOne',
                         shadows: [
@@ -213,7 +213,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("Delhi Public School, Jankipuram",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                           Shadow(
@@ -233,7 +233,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("St. Fidelis College, Vikas Nagar",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                           Shadow(
@@ -253,7 +253,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("Montfort Inter College, Mahanagar",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                           Shadow(
@@ -273,7 +273,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("City Montessori School, Mahanagar",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                           Shadow(
@@ -293,7 +293,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("St. Antony Inter College, Aliganj",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                         Shadow(
@@ -313,7 +313,7 @@ class CircularsHome extends StatelessWidget{
                 child: ListTile(
                   title: Text("Mount Carmel College, Mahanagar",
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                         shadows: [
                           Shadow(

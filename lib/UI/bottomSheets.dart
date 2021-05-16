@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lpchub/UI/Profile.dart';
 import 'package:lpchub/UI/Subscription.dart';
+import 'package:lpchub/feedback.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,7 +34,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                         "Profile and Account",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                         fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -54,7 +55,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                       "Your Subcription",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -93,7 +94,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                       "Rate Us",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -107,11 +108,14 @@ class MyBottomSheet extends StatelessWidget{
                   ),
                 ),
                 ListTile(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => feedback()));
+                  },
                   title: Center(
                     child: Text(
                       "Give Your Feedback",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -132,7 +136,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                       "Share SchoolHub",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -153,7 +157,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                       "Join Our Discord Server",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(
@@ -167,12 +171,15 @@ class MyBottomSheet extends StatelessWidget{
                   ),
                 ),
                 ListTile(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profile()));
+                  },
                   title: Center(
                     child: Text(
                       "Community Guidelines",
                       style: TextStyle(
                           fontFamily: 'MeriendaOne',
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           shadows: [
                             Shadow(
                                 blurRadius: 1.0,
@@ -192,7 +199,7 @@ class MyBottomSheet extends StatelessWidget{
                     child: Text(
                       "Privacy Policy",
                       style: TextStyle(
-                          color: Color(0xffff9999),
+                          color: Color(0xff4e5ed9),
                           fontFamily: 'MeriendaOne',
                           shadows: [
                             Shadow(

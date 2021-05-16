@@ -76,11 +76,11 @@ class _DashboardState extends State<Dashboard> {
                        "SCHOOLHUB",
                        style: TextStyle(
                              fontFamily: 'MeriendaOne',
-                             color: Color(0xffff9999),
+                             color: Color(0xff4e5ed9),
                              fontSize: 27.0,
                              shadows: [
                                Shadow(
-                                   blurRadius: 5.0,
+                                   blurRadius: 3.0,
                                    color: Colors.black,
                                    offset: Offset(1.0,1.0)
                                )
@@ -136,7 +136,7 @@ class _DashboardState extends State<Dashboard> {
                               )
                             ],
                               borderRadius: BorderRadius.circular(50.0),
-                              border: Border.all(color: Colors.red, width: 2.0)
+                              border: Border.all(color: Color(0xff4e5ed9), width: 2.0)
                           ),
                           child: Container(
                             decoration: BoxDecoration(
@@ -171,7 +171,7 @@ class _DashboardState extends State<Dashboard> {
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(50.0),
-                                border: Border.all(color: Colors.red, width: 2.0)
+                                border: Border.all(color: Color(0xff4e5ed9), width: 2.0)
                             ),
                             child: Container(
                               decoration: BoxDecoration(
@@ -206,7 +206,7 @@ class _DashboardState extends State<Dashboard> {
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(50.0),
-                                border: Border.all(color: Colors.red, width: 2.0)
+                                border: Border.all(color: Color(0xff4e5ed9), width: 2.0)
                             ),
                             child: Container(
                               decoration: BoxDecoration(
@@ -241,7 +241,7 @@ class _DashboardState extends State<Dashboard> {
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(50.0),
-                                border: Border.all(color: Colors.red, width: 2.0)
+                                border: Border.all(color: Color(0xff4e5ed9), width: 2.0)
                             ),
                             child: Container(
                               decoration: BoxDecoration(
@@ -390,8 +390,8 @@ class _DashboardState extends State<Dashboard> {
                 Container(
                   decoration: BoxDecoration(
                     gradient: new LinearGradient(colors: [
-                      Color(0xffE69494),
-                      Color(0xffE69494),
+                      Color(0xff4e5ed9),
+                      Color(0xff4e5ed9),
                     ],
                         begin: const FractionalOffset(0.0, 0.0),
                         end: const FractionalOffset(1.0, 1.0),
@@ -415,7 +415,7 @@ class _DashboardState extends State<Dashboard> {
                 Container(
                   child: Text('SOON ON SCHOOLHUB',
                     style: TextStyle(
-                      color: Color(0xffff9999),
+                      color: Color(0xff4e5ed9),
                       fontSize: 16,
                       fontFamily: 'MeriendaOne',
                         shadows: [

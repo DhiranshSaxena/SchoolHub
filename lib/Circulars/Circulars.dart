@@ -38,7 +38,7 @@ class _CommonCircularsState extends State<CommonCirculars> {
                         "Common Circulars",
                         style: TextStyle(
                             fontFamily: 'MeriendaOne',
-                            color: Color(0xffff9999),
+                            color: Color(0xff4e5ed9),
                             fontSize: 30.0,
                             shadows: [
                               Shadow(
@@ -139,7 +139,7 @@ class _CircularLinkState extends State<CircularLink> {
                   Text(
                       widget.school,
                     style: TextStyle(
-                      color: Color(0xffff9999),
+                      color: Color(0xff4e5ed9),
                       fontSize: 20.0,
                       fontFamily: 'MeriendaOne',
                         shadows: [
@@ -154,13 +154,16 @@ class _CircularLinkState extends State<CircularLink> {
                   SizedBox(
                     height: 5,
                   ),
-                  Text(
-                    widget.titleMessge,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xff4e5ed9),
-                      fontFamily: 'Roboto',
-                      fontSize: 18.0,
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0, right: 8.0),
+                    child: Text(
+                      widget.titleMessge,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xffff9999),
+                        fontFamily: 'Roboto',
+                        fontSize: 18.0,
+                      ),
                     ),
                   ),
                   SizedBox(

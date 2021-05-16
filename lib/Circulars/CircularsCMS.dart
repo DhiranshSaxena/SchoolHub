@@ -38,7 +38,7 @@ class _CMSCircularsState extends State<CMSCirculars> {
                     "CMS Circulars",
                     style: TextStyle(
                         fontFamily: 'MeriendaOne',
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontSize: 30.0,
                         shadows: [
                           Shadow(
@@ -139,7 +139,7 @@ class _CircularLinkState extends State<CircularLink> {
                   Text(
                     widget.school,
                     style: TextStyle(
-                        color: Color(0xffff9999),
+                        color: Color(0xff4e5ed9),
                         fontSize: 20.0,
                         fontFamily: 'MeriendaOne',
                         shadows: [
@@ -158,7 +158,7 @@ class _CircularLinkState extends State<CircularLink> {
                     widget.titleMessge,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xff4e5ed9),
+                      color: Color(0xffff9999),
                       fontFamily: 'Roboto',
                       fontSize: 18.0,
                     ),

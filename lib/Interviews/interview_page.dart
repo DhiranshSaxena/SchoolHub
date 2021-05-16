@@ -61,7 +61,7 @@ class _InterviewPageState extends State<InterviewPage>{
                        docName,
                        style: TextStyle(
                            fontFamily: 'MeriendaOne',
-                           color: Color(0xffff9999),
+                           color: Color(0xff4e5ed9),
                            fontSize: 30.0,
                            shadows: [
                              Shadow(
@@ -77,7 +77,7 @@ class _InterviewPageState extends State<InterviewPage>{
                        details.status,
                        style: TextStyle(
                            fontFamily: 'MeriendaOne',
-                           color: Color(0xffff9999),
+                           color: Color(0xff4e5ed9),
                            fontSize: 18.0,
                            shadows: [
                              Shadow(
