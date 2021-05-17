@@ -1,4 +1,9 @@
 
+D:\My Codes\GitHub\GitHub\SchoolHub>flutter build --build-name: --build-number:
+
+
+flutter build appbundle --build-name: 1.1.0 --build-number:11
+
 
 keytool -exportcert -alias androiddebugkey -keystore C:\Users\Dhiransh\.android\debug.keystore | C:\bin\openssl sha1 -binary | C:\bin\openssl base64
 

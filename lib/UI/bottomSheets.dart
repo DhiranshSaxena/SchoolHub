@@ -212,6 +212,60 @@ class MyBottomSheet extends StatelessWidget{
                     ),
                   ),
                 ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: new LinearGradient(colors: [
+                          Color(0xff4e5ed9),
+                          Color(0xff4e5ed9),
+                        ],
+                            begin: const FractionalOffset(0.0, 0.0),
+                            end: const FractionalOffset(1.0, 1.0),
+                            stops: [0.0, 3.0],
+                            tileMode: TileMode.clamp
+                        ),
+                      ),
+                      width: 350.0,
+                      height: 1.0,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15.0,
+                ),
+                Center(
+                  child: Container(
+                    child: Text(
+                      "SchoolHub",
+                      style: TextStyle(
+                          color: Color(0xff4e5ed9),
+                          fontFamily: 'MeriendaOne',
+                          fontSize: 24.0,
+                          shadows: [
+                            Shadow(
+                                blurRadius: 1.0,
+                                color: Colors.black,
+                                offset: Offset(0.5,0.5)
+                            )
+                          ]
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Container(
+                    child: Text(
+                        "Version 1.0.0"
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                )
               ],
             );
             }
