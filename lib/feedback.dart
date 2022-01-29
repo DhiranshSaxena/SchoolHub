@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lpchub/DashBoard/dashboard.dart';
-import 'package:lpchub/SignUp/Login.dart';
 import 'package:lpchub/SignUp/Utils/crud.dart';
 
 class feedback extends StatelessWidget{
